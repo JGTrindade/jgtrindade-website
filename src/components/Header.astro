@@ -1,16 +1,22 @@
 ---
-import LanguageSwitch from "./LanguageSwitch.astro";
 import Menu from "./Menu.astro";
+import Logo from "./Logo.astro";
+import LanguageSwitch from "./LanguageSwitch.astro";
 ---
 
 <header>
   <Menu />
+  <Logo />
   <LanguageSwitch />
 </header>
 
 <style>
   header {
-    height: 50px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #36454f;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 </style>

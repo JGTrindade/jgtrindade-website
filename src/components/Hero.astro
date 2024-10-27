@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import hero from "../img/hero.webp";
+---
+
+<div id="wrapper">
+  <div id="hero-image">
+    <!-- <Image
+      src={hero}
+      alt="Photo of João Trindade"
+      width={80}
+      height={80}
+      quality={100}
+    /> -->
+  </div>
+</div>
+
+<style>
+  #wrapper {
+    width: 105px;
+    height: 110px;
+    margin: 0 auto 25px;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #hero-image {
+    width: 95px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px solid #36454f;
+    border-radius: 27px;
+    background-color: #36454f;
+  }
+</style>

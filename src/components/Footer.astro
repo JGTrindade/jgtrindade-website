@@ -1,0 +1,58 @@
+---
+import "@fontsource/windsong";
+import LangMenu from "./LangMenu.astro";
+import SocialMediaNav from "./SocialMediaNav.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div id="logo-name">
+    <!-- <Logo /> -->
+    <p id="name">João Trindade</p>
+  </div>
+  <div id="social-contact">
+    <div id="contact">
+      <a href="mailto:jgtrindade@joaotrindade.com"
+        >jgtrindade@joaotrindade.com</a
+      >
+      <a href="tel:+5521975016747">+55 (21) 97501 6747</a>
+    </div>
+    <SocialMediaNav />
+    <LangMenu />
+    <p id="copyrights">
+      <small>© {currentYear} João Trindade. All rights reserved.</small>
+    </p>
+  </div>
+
+  <style>
+    footer {
+      padding: 20px;
+      font-family: "Jura Variable", sans-serif;
+      color: #fff;
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+
+    #logo-name {
+      display: flex;
+    }
+
+    #name {
+      font-family: "WindSong", cursive;
+      font-size: 1.3rem;
+    }
+
+    #social-contact {
+      text-align: center;
+    }
+
+    #contact {
+      margin-top: 50px;
+    }
+
+    #contact a {
+      display: block;
+      color: #fff;
+    }
+  </style>
+</footer>

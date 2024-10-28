@@ -1,0 +1,63 @@
+---
+import Testimonial from "./Testimonial.astro";
+
+const testimonials = [
+  {
+    blockquote:
+      "“Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam possimus cum beatae cumque inventore enim unde ducimus explicabo? Quo officia hic voluptatum repudiandae fuga itaque, velit molestiae! Provident, sed quam.”",
+    citeLink: "https://www.linkedin.com/in/helgesson/",
+    reference: "Stefan Helgesson",
+    position: "Head of International SEO at the Theories Group",
+  },
+  {
+    blockquote: "",
+    citeLink: "https://www.linkedin.com/in/jdurston/",
+    reference: "Joel Durston",
+    position: "Content Manager at the Keystone Education Group",
+  },
+  {
+    blockquote: "",
+    citeLink: "https://www.linkedin.com/in/lasse-juhl-nielsen-7747b18/",
+    reference: "Lasse J. Nielsen",
+    position: "Local Manager and Editor at Bookmate",
+  },
+];
+
+testimonials.forEach((testimonial, index) => {
+  if (index > 0) {
+    testimonial.blockquote = testimonials[0].blockquote;
+  }
+});
+---
+
+<section id="testimonials">
+  <h2>Don’t take my word for it. Check out a few of my references*</h2>
+  <ul>
+    {
+      testimonials.map((testimonial) => (
+        <li>
+          {
+            <Testimonial
+              blockquote={testimonial.blockquote}
+              citeLink={testimonial.citeLink}
+              reference={testimonial.reference}
+              position={testimonial.position}
+            />
+          }
+        </li>
+      ))
+    }
+  </ul>
+  <p><small>*Contacts available upon request.</small></p>
+</section>
+
+<style>
+  #testimonials {
+    padding: 15px;
+    background-color: #eee;
+  }
+
+  li {
+    list-style-type: none;
+  }
+</style>

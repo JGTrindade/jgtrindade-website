@@ -1,0 +1,44 @@
+---
+import "@fontsource/kurale";
+import "@fontsource/merriweather";
+const { blockquote, citeLink, reference, position } = Astro.props;
+---
+
+<article class="testimonial">
+  <blockquote>
+    {blockquote}
+  </blockquote>
+  <footer>
+    <cite>
+      <a href={citeLink}>{reference}</a>
+    </cite>
+    <p>
+      {position}
+    </p>
+  </footer>
+</article>
+
+<style>
+  article {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 17px;
+    border: 1px solid gold;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: "Kurale", serif;
+    font-family: "Merriweather", serif;
+  }
+
+  blockquote {
+    margin-bottom: 30px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  a {
+    color: #2e54ff;
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+const props = Astro.props;
+---
+
+<div class="lang-wrapper">
+  <div class="lang-picker">
+    <select class="lang-picker-content" title="Change Language">
+      <option lang="en" value="en" selected>English</option>
+      <option lang="es" value="es">Español</option>
+      <option lang="fr" value="fr">Français</option>
+      <option lang="no" value="no">Norsk</option>
+      <option lang="pt-br" value="pt-br">Português (Brasil)</option>
+      <option lang="sv" value="sv">Svenska</option>
+      <option lang="ru" value="ru">Русский</option>
+    </select>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="language-picker__icon"
+      width="26px"
+      height="26px"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path
+        fill="white"
+        d="M128 26a102 102 0 1 0 102 102A102.12 102.12 0 0 0 128 26m81.57 64h-40.38a132.6 132.6 0 0 0-25.73-50.67A90.29 90.29 0 0 1 209.57 90m8.43 38a89.7 89.7 0 0 1-3.83 26h-42.36a155.4 155.4 0 0 0 0-52h42.36a89.7 89.7 0 0 1 3.83 26m-90 87.83a110 110 0 0 1-15.19-19.45A124.2 124.2 0 0 1 99.35 166h57.3a124.2 124.2 0 0 1-13.46 30.38A110 110 0 0 1 128 215.83M96.45 154a139.2 139.2 0 0 1 0-52h63.1a139.2 139.2 0 0 1 0 52ZM38 128a89.7 89.7 0 0 1 3.83-26h42.36a155.4 155.4 0 0 0 0 52H41.83A89.7 89.7 0 0 1 38 128m90-87.83a110 110 0 0 1 15.19 19.45A124.2 124.2 0 0 1 156.65 90h-57.3a124.2 124.2 0 0 1 13.46-30.38A110 110 0 0 1 128 40.17m-15.46-.84A132.6 132.6 0 0 0 86.81 90H46.43a90.29 90.29 0 0 1 66.11-50.67M46.43 166h40.38a132.6 132.6 0 0 0 25.73 50.67A90.29 90.29 0 0 1 46.43 166m97 50.67A132.6 132.6 0 0 0 169.19 166h40.38a90.29 90.29 0 0 1-66.11 50.67Z"
+      ></path>
+    </svg>
+    <svg
+      class="language-picker__chevron"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      aria-hidden="true"
+      ><path d="m14 5.98-6 6-6-6 1.06-1.06L8 9.86l4.94-4.93z"></path></svg
+    >
+  </div>
+</div>
+
+<style>
+  .lang-wrapper {
+    padding: 50px 0;
+  }
+
+  .lang-picker {
+    position: relative;
+    line-height: 21px;
+  }
+
+  .language-picker__icon {
+    position: absolute;
+    width: 25px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .language-picker__chevron {
+    position: absolute;
+    width: 15px;
+    fill: #fff;
+    top: 16px;
+    right: 5px;
+  }
+
+  select {
+    border: 1px solid #a7aaad;
+    border-radius: 6px;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    padding: 12px;
+    padding-left: 42px;
+    text-overflow: ellipsis;
+    width: 100%;
+    background-color: transparent;
+  }
+</style>

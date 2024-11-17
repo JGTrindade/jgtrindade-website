@@ -3,34 +3,47 @@ import { Image } from "astro:assets";
 import hero from "../img/hero.webp";
 ---
 
-<div id="wrapper">
-  <div id="hero-image">
-    <!-- <Image
-      src={hero}
-      alt="Photo of João Trindade"
-      width={80}
-      height={80}
-      quality={100}
-    /> -->
-  </div>
+<div id="hero-img-wrapper">
+  <Image
+    id="hero-image"
+    src={hero}
+    loading="eager"
+    alt="Photo of João Trindade"
+    width={110}
+    height={110}
+    quality={"max"}
+    densities={[1.5, 2]}
+  />
 </div>
 
 <style>
-  #wrapper {
-    width: 105px;
-    height: 110px;
-    margin: 0 auto 25px;
-    padding: 5px;
-    border-radius: 30px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  #hero-img-wrapper {
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+    position: relative;
+  }
+
+  #hero-img-wrapper::before {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none' viewBox='0 0 120 120'%3E%3Cpath stroke='%23fff' stroke-width='6' d='M33.389 4.107C42.423 3.486 52.04 3 60 3s17.577.486 26.611 1.107a31.44 31.44 0 0 1 29.282 29.282C116.514 42.423 117 52.04 117 60s-.486 17.577-1.107 26.611a31.44 31.44 0 0 1-29.282 29.282C77.577 116.514 67.96 117 60 117s-17.577-.486-26.611-1.107A31.44 31.44 0 0 1 4.107 86.611C3.486 77.577 3 67.96 3 60s.486-17.577 1.107-26.611A31.44 31.44 0 0 1 33.39 4.107Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: -1px;
+    content: "";
+    left: calc(100% / 2 - 3.75rem);
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 2;
   }
 
   #hero-image {
-    width: 95px;
-    height: 100px;
+    height: 7.5rem;
+    mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 120 120'%3E%3Cpath fill='%23000' d='M1.114 33.183A34.44 34.44 0 0 1 33.183 1.114C42.242.491 51.939 0 60 0s17.758.491 26.817 1.114a34.44 34.44 0 0 1 32.069 32.069C119.509 42.242 120 51.939 120 60s-.491 17.758-1.114 26.817a34.444 34.444 0 0 1-32.069 32.069C77.758 119.509 68.061 120 60 120s-17.758-.491-26.817-1.114A34.44 34.44 0 0 1 1.114 86.817C.491 77.758 0 68.061 0 60s.491-17.758 1.114-26.817'/%3E%3C/svg%3E");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    object-fit: cover;
+    padding: 5px;
+    width: 7.5rem;
     margin: 0 auto;
-    border-radius: 27px;
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
   }
 </style>

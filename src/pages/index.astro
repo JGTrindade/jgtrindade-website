@@ -1,10 +1,11 @@
 ---
 import "@fontsource-variable/jura";
-import '@fontsource-variable/merriweather-sans';
+import "@fontsource-variable/merriweather-sans";
 import "../styles/reset.css";
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Intro from "../components/Intro.astro";
+import DownloadResumeButton from "../components/DownloadResumeButton.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -19,9 +20,6 @@ import Footer from "../components/Footer.astro";
   <body>
     <Header />
     <Intro />
-    <main>
-      <p>PLACEHOLDER FOR MAIN SECTION</p>
-    </main>
     <Testimonials />
     <Footer />
   </body>
@@ -29,11 +27,12 @@ import Footer from "../components/Footer.astro";
 
 <style>
   main {
-    height: 400px;
+    padding: 15px;
+    background-color: rgba(46, 84, 255, 0.1);
+    color: #404565;
   }
 
-  main p {
-    text-align: center;
-    font-weight: bold;
+  main h2 {
+    margin-bottom: 20px;
   }
 </style>

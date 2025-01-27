@@ -1,0 +1,11 @@
+name: Main Workflow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: macos-latest
+    steps:
+      - name: Test for first step
+        run: echo "Test for first step."
+      - name: Test for second step
+        run: echo "Test for second step."
+      

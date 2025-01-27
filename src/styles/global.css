@@ -2,11 +2,71 @@ body {
   color: #000;
 }
 
+:root {
+  --font-size-h1: 1.5rem;
+  --font-size-h2: 1.2rem;
+  --font-size-h3: 1rem;
+  --font-size-h4: 0.875rem;
+  --font-size-h5: 0.75rem;
+  --font-size-h6: 0.625rem;
+
+  --margin-top-h1: 5rem;
+  --margin-top-h2: 4rem;
+  --margin-top-h3: 3.5rem;
+  --margin-top-h4: 3rem;
+  --margin-top-h5: 2.5rem;
+  --margin-top-h6: 2rem;
+
+  --margin-bottom-h1: 60px;
+  --margin-bottom-h2: 50px;
+  --margin-bottom-h3: 40px;
+  --margin-bottom-h4: 35px;
+  --margin-bottom-h5: 30px;
+  --margin-bottom-h6: 25px;
+
+  --font-family-primary: "Jura Variable", sans-serif;
+  --font-family-secondary: "Merriweather Sans Variable", sans-serif;
+  --font-weight-heading: 700;
+}
+
+/* Common styles for all headings */
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-heading);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  margin-top: var(--margin-top-h1);
+  margin-bottom: var(--margin-bottom-h1);
+}
+
 h2 {
-  margin-top: 4rem;
-  margin-bottom: 50px;
-  font-family: "Jura Variable", sans-serif;
-  font-family: 'Merriweather Sans Variable', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: var(--font-size-h2);
+  margin-top: var(--margin-top-h2);
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  margin-top: var(--margin-top-h3);
+  margin-bottom: var(--margin-bottom-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  margin-top: var(--margin-top-h4);
+  margin-bottom: var(--margin-bottom-h4);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+  margin-top: var(--margin-top-h5);
+  margin-bottom: var(--margin-bottom-h5);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+  margin-top: var(--margin-top-h6);
+  margin-bottom: var(--margin-bottom-h6);
 }

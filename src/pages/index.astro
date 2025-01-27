@@ -3,8 +3,10 @@ import "@fontsource-variable/jura";
 import "@fontsource-variable/merriweather-sans";
 import "../styles/reset.css";
 import "../styles/global.css";
+import projectAdaptiveTranslations from "../img/project-adaptive-translations.jpeg";
 import Header from "../components/Header.astro";
 import Intro from "../components/Intro.astro";
+import PortfolioProject from "../components/PortfolioProject.astro";
 import DownloadResumeButton from "../components/DownloadResumeButton.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Footer from "../components/Footer.astro";
@@ -20,6 +22,24 @@ import Footer from "../components/Footer.astro";
   <body>
     <Header />
     <Intro />
+    <main>
+      <h2>Personal Portfolio</h2>
+      <p>
+        These are side projects I have been working on. They help me hone my
+        skills, learn new techniques and think from a business perspective.
+      </p>
+      <h3>Python</h3>
+      <h3>JavaScript</h3>
+      <h2>Day-to-day work</h2>
+      <h3>Python</h3>
+      <PortfolioProject image={projectAdaptiveTranslations} altText="Adaptive Translations" name="Adaptive Translations" />
+      <h3>JavaScript</h3>
+      <p>
+        This is a list of the enterprise-level products I have developed and
+        contributed to as a full-time employee.
+      </p>
+      <DownloadResumeButton />
+    </main>
     <Testimonials />
     <Footer />
   </body>

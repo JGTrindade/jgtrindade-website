@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/jura";
 import "@fontsource-variable/merriweather-sans";
+import { t } from "@lingui/core/macro";
 import "../styles/reset.css";
 import "../styles/global.css";
 import projectAdaptiveTranslations from "../img/project-adaptive-translations.jpeg";
@@ -17,7 +18,7 @@ import Footer from "../components/Footer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>{t`Home`}</title>
   </head>
   <body>
     <div class="above-fold">

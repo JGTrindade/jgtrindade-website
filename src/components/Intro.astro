@@ -1,19 +1,20 @@
 ---
 import "@fontsource-variable/jura";
 import "@fontsource-variable/playfair-display";
+import { t } from "@lingui/core/macro";
 import Hero from "./Hero.astro";
 ---
 
 <div id="intro">
   <Hero />
   <h1>João Trindade</h1>
-  <p class="expertise">| Python & JavaScript Development</p>
-  <p class="expertise">| Localization Engineering & Management</p>
-  <p class="expertise">| DevOps, LangOps & LLMOps</p>
+  <p class="expertise">| {t`Python & JavaScript Development`}</p>
+  <p class="expertise">| {t`Localization Engineering & Management`}</p>
+  <p class="expertise">| {t`DevOps, LangOps & LLMOps`}</p>
   <section id="presentation">
     <p>
-      I’m a software developer with over 5 years of experience in Python and
-      JavaScript, and 13 years as a localization engineer and&nbsp;manager.
+      {t`I’m a software developer with over 5 years of experience in Python and
+      JavaScript, and 13 years as a localization engineer and&nbsp;manager.`}
     </p>
   </section>
 </div>

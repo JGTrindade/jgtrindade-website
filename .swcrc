@@ -1,0 +1,14 @@
+{
+    "jsc": {
+      "experimental": {
+        "plugins": [
+          [
+            "@lingui/swc-plugin",
+            {
+              "runtimeModule": "@lingui/core"
+            }
+          ]
+        ]
+      }
+    }
+  }

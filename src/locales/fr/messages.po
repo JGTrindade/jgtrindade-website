@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-02-24 15:04-0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: fr\n"
+
+#: src/components/Intro.astro:41
+msgid "DevOps, LangOps & LLMOps"
+msgstr ""
+
+#: src/pages/index.astro:54
+msgid "Home"
+msgstr ""
+
+#: src/components/Intro.astro:44
+msgid ""
+"I’m a software developer with over 5 years of experience in Python and\n"
+"      JavaScript, and 13 years as a localization engineer and&nbsp;manager."
+msgstr ""
+
+#: src/components/Intro.astro:40
+msgid "Localization Engineering & Management"
+msgstr ""
+
+#: src/components/Intro.astro:39
+msgid "Python & JavaScript Development"
+msgstr ""

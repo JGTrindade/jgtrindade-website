@@ -1,8 +1,46 @@
 ---
-const props = Astro.props
+
 ---
-<svg xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 32 32" {...props}>
-	<circle cx="16" cy="8" r="2" fill="white" />
-	<circle cx="16" cy="16" r="2" fill="white" />
-	<circle cx="16" cy="24" r="2" fill="white" />
-</svg>
+
+<div class="burger-button_burger">
+  <div class="burger-button_icon">
+    <div class="burger-button_icon__item burger-button_icon__item-top"></div>
+    <div class="burger-button_icon__item burger-button_icon__item-middle"></div>
+    <div class="burger-button_icon__item burger-button_icon__item-bottom"></div>
+  </div>
+</div>
+
+<style>
+  .burger-button_burger {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 8px;
+    border: 2px solid #191919;
+    border-radius: 8px;
+  }
+
+  .burger-button_icon {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    padding: 4px 3px;
+  }
+
+  .burger-button_icon__item {
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+    transition: all 0.15s linear;
+  }
+
+  .burger-button_icon__item-top,
+  .burger-button_icon__item-middle {
+    margin-bottom: 5px;
+  }
+</style>

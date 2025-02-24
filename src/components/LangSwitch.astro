@@ -1,0 +1,144 @@
+---
+import "@fontsource-variable/jura";
+
+const languages = [
+  { code: "en-US", label: "English" },
+  { code: "es", label: "Español" },
+  { code: "fr", label: "Français" },
+  { code: "pt-BR", label: "Português" },
+  { code: "ru", label: "Русский" },
+  { code: "ar", label: "العربية" },
+  { code: "zh-CN", label: "中文（简体）" },
+];
+
+const currentPath = Astro.url.pathname;
+const currentLang = currentPath.split("/")[1] || "en";
+---
+
+<div class="lang-switch">
+  <button class="lang-switch-btn" aria-expanded="false">
+    <span class="current-lang">
+      {languages.find(lang => lang.code === currentLang)?.label || "English"}
+    </span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+  <ul class="lang-options">
+    {
+      languages
+        .filter(lang => lang.code !== currentLang)
+        .map((lang) => (
+          <li>
+            <a
+            href={`/${lang.code}`}
+            class={currentLang === lang.code ? "active" : ""}
+          >
+            {lang.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .lang-switch {
+    width: 7.125rem;
+    position: relative;
+    display: inline-block;
+    font-family: "Jura Variable", sans-serif;
+    z-index: 10;
+  }
+
+  .lang-switch-btn {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .current-lang {
+    color: #000;
+  }
+
+  .lang-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Hide by default */
+    display: none;
+    transform-origin: top;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .lang-options.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+  }
+
+  .lang-options li a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .lang-options li a:hover {
+    background: #f5f5f5;
+  }
+
+  .lang-options li a.active {
+    background: #eee;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  const btn = document.querySelector(".lang-switch-btn");
+  const options = document.querySelector(".lang-options");
+
+  btn?.addEventListener("click", () => {
+    const isExpanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", (!isExpanded).toString());
+    options?.classList.toggle("show");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!btn?.contains(e.target as Node)) {
+      btn?.setAttribute("aria-expanded", "false");
+      options?.classList.remove("show");
+    }
+  });
+</script>

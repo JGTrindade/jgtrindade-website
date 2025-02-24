@@ -1,21 +1,30 @@
 ---
-import Menu from "./Menu.astro";
 import Logo from "./Logo.astro";
-import LanguageSwitch from "./LanguageSwitch.astro";
+import LangSwitch from "./LangSwitch.astro";
+import Menu from "./Menu.astro";
 ---
 
 <header>
-  <Menu />
   <Logo />
-  <LanguageSwitch />
+  <div class="langswitch-menu-container">
+    <LangSwitch />
+    <Menu />
+  </div>
 </header>
 
 <style>
   header {
-    height: 65px;
-    display: flex;
+    height: 60px;
+    display: grid;
+    padding: 0 16px;
+    grid-template-columns: auto 1fr;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+  }
+
+  .langswitch-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 </style>

@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-02-25 16:01-0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pt-br\n"
+
+#. js-lingui-explicit-id
+#: src/pages/index.astro:54
+msgid "Home"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Intro.astro:41
+msgid "Python & JavaScript Development"
+msgstr "Desenvolvimento em Python e JavaScript"
+
+#. js-lingui-explicit-id
+#: src/components/Intro.astro:43
+msgid "Localization Engineering & Management"
+msgstr "Engenharia & Gerenciamento de Localização"
+
+#. js-lingui-explicit-id
+#: src/components/Intro.astro:45
+msgid "DevOps, LangOps & LLMOps"
+msgstr "DevOps, LangOps & LLMOps"
+
+#. js-lingui-explicit-id
+#: src/components/Intro.astro:50
+msgid "I’m a software developer with over 5 years of experience in Python and JavaScript, and 13 years as a localization engineer and{nonBrSpace}manager."
+msgstr "Eu sou um desenvolvedor com mais de 5 anos de experiência em Python e JavaScript e 13 anos em engenharia e gerenciamento de{nonBrSpace}localização."

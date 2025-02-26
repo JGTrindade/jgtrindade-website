@@ -1,18 +1,20 @@
 ---
 import "@fontsource-variable/jura";
+import { i18n, setLanguage } from "../i18n/i18n";
 
 const languages = [
-  { code: "en-US", label: "English" },
+  { code: "", label: "English" },
   { code: "es", label: "Español" },
   { code: "fr", label: "Français" },
-  { code: "pt-BR", label: "Português" },
+  { code: "pt-br", label: "Português" },
   { code: "ru", label: "Русский" },
   { code: "ar", label: "العربية" },
-  { code: "zh-CN", label: "中文（简体）" },
+  { code: "zh-cn", label: "中文（简体）" },
 ];
 
 const currentPath = Astro.url.pathname;
 const currentLang = currentPath.split("/")[1] || "en";
+setLanguage(currentLang);
 ---
 
 <div class="lang-switch">

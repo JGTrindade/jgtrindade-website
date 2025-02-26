@@ -6,7 +6,7 @@ export default defineConfig({
   locales: ["ar", "en", "es", "fr", "pt-br", "ru", "zh-cn"],
   catalogs: [
     {
-      path: "<rootDir>/src/locales/{locale}/messages",
+      path: "<rootDir>/src/i18n/locales/{locale}/messages",
       include: ["src"],
     },
   ],

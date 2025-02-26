@@ -1,20 +1,30 @@
 ---
 import "@fontsource-variable/jura";
 import "@fontsource-variable/playfair-display";
-import { t } from "@lingui/core/macro";
 import Hero from "./Hero.astro";
+
+import { i18n } from "../i18n/i18n";
+import { decodeHtmlEntities } from "../utils/i18n.mjs";
 ---
 
 <div id="intro">
   <Hero />
   <h1>João Trindade</h1>
-  <p class="expertise">| {t`Python & JavaScript Development`}</p>
-  <p class="expertise">| {t`Localization Engineering & Management`}</p>
-  <p class="expertise">| {t`DevOps, LangOps & LLMOps`}</p>
+  <p class="expertise">| {i18n._("Python & JavaScript Development")}</p>
+  <p class="expertise">
+    | {i18n._("Localization Engineering & Management")}
+  </p>
+  <p class="expertise">| {i18n._("DevOps, LangOps & LLMOps")}</p>
   <section id="presentation">
     <p>
-      {t`I’m a software developer with over 5 years of experience in Python and
-      JavaScript, and 13 years as a localization engineer and&nbsp;manager.`}
+      {
+        decodeHtmlEntities(
+          i18n._(
+            "I’m a software developer with over 5 years of experience in Python and JavaScript, and 13 years as a localization engineer and{nonBrSpace}manager.",
+            { nonBrSpace: "&nbsp;" }
+          )
+        )
+      }
     </p>
   </section>
 </div>

@@ -1,0 +1,25 @@
+---
+import "../styles/reset.css";
+import "../styles/global.css";
+import Header from "../components/blog/Header.astro";
+const {title} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{title}</title>
+</head>
+<body>
+<Header/>
+<slot/>
+</body>
+
+<style>
+    .above-fold {
+        background: linear-gradient(to right, #dbefe4, #c6d7ec);
+    }
+</style>

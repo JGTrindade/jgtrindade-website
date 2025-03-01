@@ -1,7 +1,10 @@
 ---
 import "../styles/reset.css";
 import "../styles/global.css";
+import "@fontsource-variable/jura";
+import "@fontsource-variable/playfair-display";
 import Header from "../components/blog/Header.astro";
+import Logo from "../components/blog/Logo.astro";
 const {title} = Astro.props;
 ---
 <!doctype html>
@@ -19,7 +22,5 @@ const {title} = Astro.props;
 </body>
 
 <style>
-    .above-fold {
-        background: linear-gradient(to right, #dbefe4, #c6d7ec);
-    }
+
 </style>

@@ -1,7 +1,52 @@
 ---
 import BaseBlogLayout from "../layouts/BaseBlogLayout.astro";
+import Logo from "../components/blog/Logo.astro";
+import PostInMainPage from "../components/blog/PostInMainPage.astro";
+import {getCollection} from "astro:content";
+
+const posts = await getCollection('posts');
+console.log(posts);
 ---
 
 <BaseBlogLayout title="Expert Generalism">
-    <h1>Expert Generalism</h1>
+    <div id="presentation-section">
+        <div class="pres-grid">
+            <div id="pres-container">
+                <Logo/>
+                <p>A journey through software development, language and philosophy.</p>
+            </div>
+        </div>
+    </div>
 </BaseBlogLayout>
+<section id="posts-list">
+    <ul>
+        {posts.map(post => (
+                <li>
+                    <PostInMainPage post={post}/>
+                </li>
+        ))}
+    </ul>
+</section>
+
+<style>
+    #presentation-section {
+        height: 200px;
+        background: linear-gradient(to right, #dbefe4, #c6d7ec);
+        text-align: center;
+    }
+
+    .pres-grid {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    #pres-container {
+        font-family: "Jura Variable", sans-serif;
+    }
+
+    #posts-list {
+        //padding: 48px 15px 40px;
+    }
+</style>

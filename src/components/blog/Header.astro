@@ -1,19 +1,17 @@
 ---
-import Logo from "./Logo.astro";
 import Menu from "../Menu.astro";
 ---
 <header>
-    <Logo/>
     <Menu/>
 </header>
 
 <style>
   header {
     height: 60px;
-    display: grid;
     padding: 0 16px;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
+    background: linear-gradient(to right, #dbefe4, #c6d7ec);
   }
 </style>

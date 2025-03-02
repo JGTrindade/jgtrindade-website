@@ -1,0 +1,41 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import "../styles/reset.css";
+import "../styles/global.css";
+import "@fontsource-variable/jura";
+import "@fontsource-variable/playfair-display";
+const {title} = Astro.props;
+
+let currentPage: string = Astro.url.pathname;
+let homepage: boolean = false;
+if (currentPage === "/") {
+    homepage = true;
+}
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{title}</title>
+</head>
+<body>
+{homepage ? (
+        <div class="above-fold">
+            <Header/>
+        </div>) : (
+        <Header/>
+)}
+<slot/>
+<Footer/>
+</body>
+</html>
+
+<style>
+    .above-fold {
+        background: linear-gradient(to right, #dbefe4, #c6d7ec);
+    }
+</style>

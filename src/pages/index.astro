@@ -1,70 +1,52 @@
 ---
 import "@fontsource-variable/jura";
 import "@fontsource-variable/merriweather-sans";
-import "../styles/reset.css";
-import "../styles/global.css";
 import projectAdaptiveTranslations from "../img/project-adaptive-translations.jpeg";
-import Header from "../components/Header.astro";
+
 import Intro from "../components/Intro.astro";
 import PortfolioProject from "../components/PortfolioProject.astro";
 import DownloadResumeButton from "../components/DownloadResumeButton.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Footer from "../components/Footer.astro";
-
-import { i18n } from "@lingui/core";
+import {i18n} from "@lingui/core";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{i18n._("Home")}</title>
-  </head>
-  <body>
-    <div class="above-fold">
-      <Header />
-      <Intro />
-    </div>
+<BaseLayout title="Home">
+    <Intro/>
     <main>
-      <h2>Personal Portfolio</h2>
-      <p>
-        These are side projects I have been working on. They help me hone my
-        skills, learn new techniques and think from a business perspective.
-      </p>
-      <h3>Python</h3>
-      <h3>JavaScript</h3>
-      <h2>Day-to-day work</h2>
-      <h3>Python</h3>
-      <PortfolioProject
-        image={projectAdaptiveTranslations}
-        altText="Adaptive Translations"
-        name="Adaptive Translations"
-      />
-      <h3>JavaScript</h3>
-      <p>
-        This is a list of the enterprise-level products I have developed and
-        contributed to as a full-time employee.
-      </p>
-      <DownloadResumeButton />
+        <h2>Personal Portfolio</h2>
+        <p>
+            These are side projects I have been working on. They help me hone my
+            skills, learn new techniques and think from a business perspective.
+        </p>
+        <h3>Python</h3>
+        <h3>JavaScript</h3>
+        <h2>Day-to-day work</h2>
+        <h3>Python</h3>
+        <PortfolioProject
+                image={projectAdaptiveTranslations}
+                altText="Adaptive Translations"
+                name="Adaptive Translations"
+        />
+        <h3>JavaScript</h3>
+        <p>
+            This is a list of the enterprise-level products I have developed and
+            contributed to as a full-time employee.
+        </p>
+        <DownloadResumeButton/>
     </main>
-    <Testimonials />
-    <Footer />
-  </body>
-</html>
+    <Testimonials/>
+</BaseLayout>
 
 <style>
-  .above-fold {
-    background: linear-gradient(to right, #dbefe4, #c6d7ec);
-  }
+    main {
+        padding: 15px;
+        background-color: rgba(46, 84, 255, 0.1);
+        color: #404565;
+    }
 
-  main {
-    padding: 15px;
-    background-color: rgba(46, 84, 255, 0.1);
-    color: #404565;
-  }
-
-  main h2 {
-    margin-bottom: 20px;
-  }
+    main h2 {
+        margin-bottom: 20px;
+    }
 </style>
